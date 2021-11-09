@@ -1,0 +1,7 @@
+.container__movie{
+    padding-top: 50px;
+}
+.container__movie{
+    display: flex;
+    flex-wrap: wrap;
+}

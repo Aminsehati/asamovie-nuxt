@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+body{
+    background: #121212;
+    color: #fff;
+    direction: rtl;
+    overflow-x: hidden;
+    font-family: IRANSans;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* font */
+.font-400{
+    font-weight: 400;
+}
+.font-500{
+    font-weight: 600;
+}
+.font-600{
+    font-weight: 600;
+}
+.font-700{
+    font-weight: 700;
+}
+.font-800{
+    font-weight: 800;
+}
+/* font */
+
+
+/* flex */
+.flex-1{
+    flex: 1 1 0;
+    min-width: 0;
+}
+.flex-grow-1{
+    flex-grow: 1;
+}
+/* flex */
+.mw-100{
+    min-width: 100px;
+}
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #343637;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 1px grey;
+    background-color: #000;
+}
+
+
+/* Marign */
+.mb-20{
+    margin-bottom: 20px;
+}
+.mb-8{
+    margin-bottom: 0.5rem;
+}
+/* Marign */

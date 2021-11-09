@@ -1,0 +1,16 @@
+.category__item .category__item_cover{
+    position: relative;
+    padding-bottom: 60%;
+    background: #37383e;
+    border-radius: 6px;
+}
+.category__item .category__item_cover img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    opacity: 1;
+}

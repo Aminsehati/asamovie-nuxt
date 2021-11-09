@@ -1,0 +1,28 @@
+.selectbox_group .selectbox_control{
+    width: 100%;
+    display: block;
+    background-color: #292929;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ABABABD4;
+    border-radius: 0.25rem;
+    padding: 0 10px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.selectbox_group .selectbox_control option{
+    outline: none;
+    font-size: 11px;
+    font-weight: 500;
+    height: 50px;
+    display: block;
+    background-color: #292929;
+    color: #fff;
+    padding: 10px 0;
+    height: 60px;
+}
+.selectbox_group .selectbox_control option:hidden{
+    display: none;
+}

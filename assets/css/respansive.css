@@ -1,0 +1,10 @@
+@media screen and (min-width:920px){
+    .container-fluid{
+        padding: 1px 30px;
+    }
+}
+@media screen and (max-width:920px){
+    .container-fluid{
+        padding: 1px 20px;
+    }
+}
