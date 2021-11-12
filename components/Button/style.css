@@ -19,3 +19,15 @@
     color: #e6123bba;
     transition: all 0.3s;
 }
+.btn.btn-secondary{
+    background: #00e8ff94;
+    color: #fff;
+    min-width: 150px;
+    padding: 11px 0;
+    font-size: 13px;
+}
+.btn.btn-secondary:hover{
+    background: #fff;
+    color: #000;
+
+}
