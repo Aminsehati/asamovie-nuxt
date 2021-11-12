@@ -5,3 +5,24 @@
     display: flex;
     flex-wrap: wrap;
 }
+@media screen and (max-width:1200px){
+    .movie_page .container__movie .movie__{
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media screen and (max-width:992px){
+    .movie_page .container__movie .movie__{
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
+    .movie_page .filters_box{
+        display: none;
+    }
+}
+@media screen and (max-width:420px){
+    .movie_page .container__movie .movie__{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
