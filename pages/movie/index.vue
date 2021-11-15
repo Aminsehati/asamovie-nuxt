@@ -1,7 +1,7 @@
 <template>
   <div class="movie_page">
     <div class="container-fluid">
-      <filtersBox />
+      <filtersBox @onFilter="filterMovie"/>
     </div>
     <div class="container-fluid">
       <div class="container__movie ">
@@ -26,105 +26,118 @@ export default {
         {
           id: 2,
           title:'اپکس',
-          image:'https://asamovie.ir/wp-content/uploads/2021/11/bGiFwqFTrx9hLS1kdwKJxQHZtvd-1-270x390.jpg'
+          image:'https://asamovie.ir/wp-content/uploads/2021/11/bGiFwqFTrx9hLS1kdwKJxQHZtvd-1-270x390.jpg',
+          year:'2021'
         },
         {
           id: 3,
           title:'آتش خشم',
-          image:'https://asamovie.ir/wp-content/uploads/2021/11/9a93ecdd6d6d0d2b-2-270x390.jpg'
+          image:'https://asamovie.ir/wp-content/uploads/2021/11/9a93ecdd6d6d0d2b-2-270x390.jpg',
+          year:'2021'
         },
         {
           id: 4,
           title:'ارتش دزدان',
-          image:'https://asamovie.ir/wp-content/uploads/2021/11/j04Oepj3LGTWSb1ltXm0pcy50Xq-2-1-270x390.jpg'
+          image:'https://asamovie.ir/wp-content/uploads/2021/11/j04Oepj3LGTWSb1ltXm0pcy50Xq-2-1-270x390.jpg',
+          year:'2021'
         },
         {
           id: 5,
           title:'چهره',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/MV5BNGFlOTVkMmMtOWE1OC00Y2Q1LThmNTctM2IxMWVkY2EyYjBlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_-2-1-270x390.jpg'
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/MV5BNGFlOTVkMmMtOWE1OC00Y2Q1LThmNTctM2IxMWVkY2EyYjBlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_-2-1-270x390.jpg',
+          year:'2021'
         },
         {
           id: 6,
           title:'ویچر : کابوس مرگ',
-          image: "https://asamovie.ir/wp-content/uploads/2021/10/the-witcher-nightmare-of-the-wolf-6118a7f67f244-2-1-270x390.jpg"
+          image: "https://asamovie.ir/wp-content/uploads/2021/10/the-witcher-nightmare-of-the-wolf-6118a7f67f244-2-1-270x390.jpg",
+          year:'2021'
         },
         {
           id: 7,
           title:'دزدان مقبره',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/image_6025221611c824.36498386-4-270x390.jpg'
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/image_6025221611c824.36498386-4-270x390.jpg',
+          year:'2021'
         },
         {
           id: 8,
           title:'مامور مخفی دینگلدورف و سگ مورد اعتمادش اسپلت',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/dm2x4nqi4rq51-1-270x390.jpg'
-        },
-        {
-          id: 8,
-          title:'دلداده',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/p12397294_v_v10_ac-270x390.jpg'
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/dm2x4nqi4rq51-1-270x390.jpg',
+          year:'2021'
         },
         {
           id: 9,
-          title:'گلوله را بگیر',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/7PoomidF9HlMKXcAyOJ87lGkhSp-270x390.jpg'
+          title:'دلداده',
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/p12397294_v_v10_ac-270x390.jpg',
+          year:'2021'
         },
         {
           id: 10,
-          title:'جوی و الا',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/Joey-and-Ella-A-Kangaroo-Tail-2021-270x390.jpg'
+          title:'گلوله را بگیر',
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/7PoomidF9HlMKXcAyOJ87lGkhSp-270x390.jpg',
+          year:'2021'
         },
         {
           id: 11,
-          title:'شب آمریکایی',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/wdIDoA18nbTO8Dux8LgsGLnwlvZ-1568x2352-3-270x390.jpg'
+          title:'جوی و الا',
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/Joey-and-Ella-A-Kangaroo-Tail-2021-270x390.jpg',
+          year:'2021'
         },
         {
           id: 12,
-          title:'تل ماسه',
-          image:'https://asamovie.ir/wp-content/uploads/2021/10/dune-611fc9d216b97-1-7-270x390.jpg'
+          title:'شب آمریکایی',
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/wdIDoA18nbTO8Dux8LgsGLnwlvZ-1568x2352-3-270x390.jpg',
+          year:'2021'
         },
         {
           id: 13,
-          title:'هالووین می کشد',
-          image: "https://asamovie.ir/wp-content/uploads/2021/10/HAK_Dolby_DiscoverIt_RGB_1-scaled-1-2-270x390.jpg"
+          title:'تل ماسه',
+          image:'https://asamovie.ir/wp-content/uploads/2021/10/dune-611fc9d216b97-1-7-270x390.jpg',
+          year:'2021'
         },
         {
           id: 14,
+          title:'هالووین می کشد',
+          image: "https://asamovie.ir/wp-content/uploads/2021/10/HAK_Dolby_DiscoverIt_RGB_1-scaled-1-2-270x390.jpg",
+          year:'2021'
+        },
+        {
+          id: 15,
           title:'سار',
           image:'https://asamovie.ir/wp-content/uploads/2021/10/gPkaPGNbjZCeRurSYGi0JD63DBa-3-270x390.jpg'
         },
         {
-          id: 15,
+          id: 16,
           title:'پسر من',
           image:'https://asamovie.ir/wp-content/uploads/2021/10/1632133066_hearts-270x390.jpg'
         },
         {
-          id: 16,
+          id: 17,
           title:'دلداده',
           image:'https://asamovie.ir/wp-content/uploads/2021/10/p12397294_v_v10_ac-270x390.jpg'
         },
         {
-          id: 17,
+          id: 18,
           title:'گلوله را بگیر',
           image:'https://asamovie.ir/wp-content/uploads/2021/10/7PoomidF9HlMKXcAyOJ87lGkhSp-270x390.jpg'
         },
         {
-          id: 18,
+          id: 19,
           title:'جوی و الا',
           image:'https://asamovie.ir/wp-content/uploads/2021/10/Joey-and-Ella-A-Kangaroo-Tail-2021-270x390.jpg'
         },
         {
-          id: 19,
+          id: 20,
           title:'شب آمریکایی',
           image:'https://asamovie.ir/wp-content/uploads/2021/10/wdIDoA18nbTO8Dux8LgsGLnwlvZ-1568x2352-3-270x390.jpg'
         },
         {
-          id: 20,
+          id: 21,
           title:'تل ماسه',
           image:'https://asamovie.ir/wp-content/uploads/2021/10/dune-611fc9d216b97-1-7-270x390.jpg'
         },
         {
-          id: 21,
+          id: 21222,
           title:'هالووین می کشد',
           image: "https://asamovie.ir/wp-content/uploads/2021/10/HAK_Dolby_DiscoverIt_RGB_1-scaled-1-2-270x390.jpg"
         },
@@ -262,6 +275,15 @@ export default {
       ],
     };
   },
+  methods:{
+    filterMovie(data){
+      this.$router.push({
+       query : {
+        ...data
+       }
+      })
+    }
+  }
 };
 </script>
 
