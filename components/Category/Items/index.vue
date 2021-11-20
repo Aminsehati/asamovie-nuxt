@@ -1,6 +1,7 @@
 <template>
   <div class="category__item">
-        <nuxt-link to="/">
+
+        <nuxt-link :to="categoryInfo.path">
             <figure class="category__item_cover">
                 <img :src="categoryInfo.image"/>
             </figure>

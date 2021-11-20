@@ -32,7 +32,7 @@
             <i class="fas fa-check"></i>
         </span>
       </div>
-      <Button class="btn__filters" primary>
+      <Button class="btn__filters" primary @onClick="onFilter">
             اعمال فیلتر
       </Button>
     </div>
@@ -48,7 +48,7 @@ export default {
           id: 1,
           name: "فیلم ",
           value: "movie",
-          selected:true,
+          selected:true
         },
         {
           id: 2,
@@ -90,17 +90,17 @@ export default {
       ],
       CountryItem: [
         {
-          id: 2,
+          id: 22,
           name: "آفریقای جنوبی",
           value: "South-Africa",
         },
         {
-          id: 3,
+          id: 32,
           name: "آلمان",
           value: "Germany",
         },
         {
-          id: 4,
+          id: 42,
           name: "آمریکا",
           value: "america",
         },
@@ -122,48 +122,53 @@ export default {
           value: "German",
         },
         {
-          id: 3,
+          id: 4,
           name: "فرانسوی",
           value: "French",
         },
       ],
       AgesItem: [
         {
-          id: 1,
+          id: 111,
           name: "همه سنین",
           value: "All-ages",
         },
         {
-          id: 2,
+          id: 222,
           name: "بالای 13 سال",
           value: "over-13",
         },
         {
-          id: 3,
+          id: 333,
           name: "بالای 15 سال",
           value: "over-15",
         },
         {
-          id: 4,
+          id: 444,
           name: "بالای 18 سال",
           value: "over-18",
         },
       ],
       filters:{
-          language:'persion',
-          country:'South-Africa',
-          type:'movie',
-          genre:'Music',
-          age:'All-ages',
-          isHD:false,
+          language:this.$route.query.language ||'persion',
+          country: this.$route.query.language  || 'South-Africa',
+          type: this.$route.query.type  || 'movie',
+          genre: this.$route.query.type  || 'Music',
+          age: this.$route.query.age  || 'All-ages',
+          isHD: this.$route.query.isHD  || false,
       },
     };
   },
   methods: {
     showCheckbox(){
         this.filters.isHD = !this.filters.isHD
+    },
+    onFilter(){
+      this.$emit('onFilter',this.filters)
     }
   },
+  mounted(){
+  }
 };
 </script>
 
