@@ -1,9 +1,9 @@
 <template>
-  <div class="selectbox_group " :value="value " @input="updatevalue($event.target.value)">
+  <div class="selectbox_group " :value="value " @change="updatevalue($event.target.value)">
     <select class="selectbox_control" >
-        <option v-for="item in selectboxInfo " :key="item.id" :value="item.value"  :selected="item.selected" :hidden="item.hidden"
+        <option v-for="item in selectboxInfo " :key="item.id" :value="item.value"  :selected="item.value === value"
         >
-                {{item.name}}
+                {{item.name }}
         </option>
     </select>
   </div>
@@ -19,11 +19,6 @@ export default {
         value:{
             type:String,
             default:''
-        }
-    },
-    data(){
-        return {
-            selected:''
         }
     },
     methods:{

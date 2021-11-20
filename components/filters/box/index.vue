@@ -48,7 +48,7 @@ export default {
           id: 1,
           name: "فیلم ",
           value: "movie",
-          selected:true,
+          selected:true
         },
         {
           id: 2,
@@ -150,12 +150,12 @@ export default {
         },
       ],
       filters:{
-          language:'persion',
-          country:'South-Africa',
-          type:'movie',
-          genre:'Music',
-          age:'All-ages',
-          isHD:false,
+          language:this.$route.query.language ||'persion',
+          country: this.$route.query.language  || 'South-Africa',
+          type: this.$route.query.type  || 'movie',
+          genre: this.$route.query.type  || 'Music',
+          age: this.$route.query.age  || 'All-ages',
+          isHD: this.$route.query.isHD  || false,
       },
     };
   },
@@ -167,6 +167,8 @@ export default {
       this.$emit('onFilter',this.filters)
     }
   },
+  mounted(){
+  }
 };
 </script>
 
