@@ -1,12 +1,12 @@
 <template>
-  <div class="movie_page">
+  <div class="serial_page">
     <div class="container-fluid">
       <filtersBox @onFilter="filterMovie" :filtersInfo="filters" />
     </div>
     <div class="container-fluid">
       <div class="container__movie">
         <Movie
-          v-for="item in movieItem"
+          v-for="item in serialItems"
           :key="item.id"
           :movieInfo="item"
           class="mb-20"
@@ -17,10 +17,11 @@
 </template>
 
 <script>
+import "./style.css";
 export default {
   data() {
     return {
-      movieItem: [
+      serialItems: [
         {
           id: 1,
           title: "تک تیرنداز",
@@ -328,7 +329,7 @@ export default {
       filters: {
         language: this.$route.query.language || "persion",
         country: this.$route.query.country || "South-Africa",
-        type: this.$route.query.type || "movie",
+        type: this.$route.query.type || "Serial",
         genre: this.$route.query.type || "Music",
         age: this.$route.query.age || "All-ages",
         isHD: this.$route.query.isHD || false,
@@ -347,18 +348,5 @@ export default {
 };
 </script>
 
-<style scoped>
-@import "./style.css";
-</style>
 <style>
-.container__movie {
-  margin-left: -7px;
-  margin-right: -7px;
-}
-.container__movie .movie__ {
-  flex: 0 0 12.4%;
-  padding-right: 7px;
-  padding-left: 7px;
-  padding-bottom: 2rem;
-}
 </style>

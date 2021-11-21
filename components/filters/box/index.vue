@@ -3,30 +3,30 @@
     <div class="filter_wrapper">
       <SelectBox
         :selectboxInfo="typeMovieItem"
-        v-model="filters.type"
+        v-model="filtersInfo.type"
         class="flex-grow-1 filters_item"
       />
       <SelectBox
         :selectboxInfo="genreItem"
         class="flex-grow-1 filters_item"
-        v-model="filters.genre"
+        v-model="filtersInfo.genre"
       />
       <SelectBox
         :selectboxInfo="CountryItem"
         class="flex-grow-1 filters_item"
-        v-model="filters.country"
+        v-model="filtersInfo.country"
       />
       <SelectBox
         :selectboxInfo="languagesItem"
         class="flex-grow-1 filters_item"
-        v-model="filters.language"
+        v-model="filtersInfo.language"
       />
       <SelectBox
         :selectboxInfo="AgesItem"
         class="flex-grow-1 filters_item"
-        v-model="filters.age"
+        v-model="filtersInfo.age"
       />
-      <div :class="['checkbox__wrapper',{'active':filters.isHD}]" @click="showCheckbox">
+      <div :class="['checkbox__wrapper',{'active':filtersInfo.isHD}]" @click="showCheckbox">
         <p>HD</p>
         <span>
             <i class="fas fa-check"></i>
@@ -41,6 +41,12 @@
 
 <script>
 export default {
+  props:{
+    filtersInfo : {
+      type:Object,
+      default:()=>{}
+    }
+  },
   data() {
     return {
       typeMovieItem: [
@@ -148,23 +154,15 @@ export default {
           name: "بالای 18 سال",
           value: "over-18",
         },
-      ],
-      filters:{
-          language:this.$route.query.language ||'persion',
-          country: this.$route.query.language  || 'South-Africa',
-          type: this.$route.query.type  || 'movie',
-          genre: this.$route.query.type  || 'Music',
-          age: this.$route.query.age  || 'All-ages',
-          isHD: this.$route.query.isHD  || false,
-      },
+      ]
     };
   },
   methods: {
     showCheckbox(){
-        this.filters.isHD = !this.filters.isHD
+        // this.filters.isHD = !this.filters.isHD
     },
     onFilter(){
-      this.$emit('onFilter',this.filters)
+      this.$emit('onFilter',this.filtersInfo)
     }
   },
   mounted(){
