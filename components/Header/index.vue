@@ -4,7 +4,7 @@
           <!-- logo Area !-->
           <div class="logo__area">
             <nuxt-link to="/">
-              <img src="logo.png"/>
+              <img src="/logo.png"/>
             </nuxt-link>
           </div>
           <!-- logo Area !-->
