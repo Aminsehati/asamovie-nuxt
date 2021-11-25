@@ -7,8 +7,9 @@
 </template>
 
 <script>
+  import iconsMixin from '../mixins/icons'
 export default {
-
+  mixins:[iconsMixin]
 }
 </script>
 
