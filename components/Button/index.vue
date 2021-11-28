@@ -15,10 +15,18 @@ export default {
             type:Boolean,
             default:false,
         },
+        light:{
+            type:Boolean,
+            default:false
+        },
         block:{
             type:Boolean,
             default:false,
         },
+        blue:{
+            type:Boolean,
+            default:false
+        }
     },
     computed:{
         buttonClasses(){
@@ -27,7 +35,9 @@ export default {
                 {
                     'btn-block':this.block,
                     'btn-primary':this.primary,
-                    'btn-secondary' : this.secondary
+                    'btn-secondary' : this.secondary,
+                    'btn-light':this.light,
+                    'btn-blue':this.blue
                 }
             ]
         }

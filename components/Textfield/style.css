@@ -1,0 +1,14 @@
+.form_group .form-control{
+    width: 100%;
+    display: block;
+    height: 57px;
+    outline: none;
+    border-radius: 2px;
+    background: none 0% 0% repeat scroll rgb(55, 56, 62);
+    padding: 0 20px;
+    color: #fff;
+    font-size: 12px;
+}
+.form_group .form-control::placeholder{
+    color: #fff;
+}

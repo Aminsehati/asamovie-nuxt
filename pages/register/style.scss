@@ -1,0 +1,32 @@
+.register-page{
+    background: #27282D;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .box_register{
+        background: rgba(34,35,39,0.95);
+        box-shadow: 0px 9px 15px 0px rgb(2 2 2 / 60%);
+        border-radius: 10px;
+        width: 380px;
+        label{
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.9);
+        }
+        .register-form{
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+            padding-right: 1.785rem;
+            padding-left: 1.785rem;
+            .phonenumber-field{
+                margin-bottom: 40px;
+            }
+            .password-field{
+                margin-bottom: 25px;
+            }
+        }
+        .go-to-login{
+           padding-bottom: 3.75rem;
+        }
+    }
+}
