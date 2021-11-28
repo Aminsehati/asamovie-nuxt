@@ -1,7 +1,7 @@
 .filters_box{
     background: #d0d0d017;
     border-radius: 10px;
-    padding: 25px 30px;
+    padding: 1.25rem 30px;
 }
 .filters_box .filter_wrapper{
     width: 95%;

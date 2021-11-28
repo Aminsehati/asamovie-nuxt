@@ -5,6 +5,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.movie_page{
+    padding-top: 15px;
+}
 @media screen and (max-width:1200px){
     .movie_page .container__movie .movie__{
         flex: 0 0 25%;

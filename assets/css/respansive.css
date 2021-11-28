@@ -8,3 +8,8 @@
         padding: 1px 20px;
     }
 }
+@media screen and (max-width:768px){
+    .container-fluid{
+        padding: 1px 15px;
+    }
+}
