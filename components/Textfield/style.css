@@ -11,4 +11,8 @@
 }
 .form_group .form-control::placeholder{
     color: #fff;
+    text-align: right !important; 
+}
+.form_group .form-control::-moz-placeholder{
+    color: red;
 }

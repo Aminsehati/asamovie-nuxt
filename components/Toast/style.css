@@ -1,0 +1,89 @@
+.toast_notifaction{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    min-height: 80px;
+    top: 14px;
+    left: 24px;
+    background:#FFFDF9;
+    box-shadow: 0 3px 10px rgb(255 195 0 / 8%);
+    border-radius: 17px;
+    display: none;
+}
+.toast_notifaction .toast {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+}
+.toast_notifaction .toast .toast-icon{
+    padding-right: 20px;
+}
+.toast_notifaction .toast .toast-icon img{
+    width: 60px;
+}
+.toast_notifaction .toast .toast-content{
+    padding-right: 15px;
+}
+.toast_notifaction .toast .toast-content h2{
+    font-size: 13px;
+    font-weight: 500;
+}
+.toast_notifaction .toast .toast-content h5{
+    font-size: 11px;
+}
+.toast_notifaction .toast.toast-error h2{
+    color: #EE2C53;
+}
+.toast_notifaction .toast.toast-error .toast-content h5{
+    color: #EE2C53;
+}
+.toast_notifaction .toast.toast-info h2{
+    color: #FFC300;
+}
+.toast_notifaction .toast.toast-info .toast-content h5{
+    color: #FFC300;
+}
+@keyframes dig_popBounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(3000px, 0, 0);
+        transform: translate3d(3000px, 0, 0);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(-25px, 0, 0);
+        transform: translate3d(-25px, 0, 0);
+    }
+
+    75% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+
+    90% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.toast_notifaction.show-toast-notifaction{
+    display: block;
+    animation-duration: 3500ms;
+    animation-fill-mode:both;
+    animation-name: dig_popBounceInRight;
+}

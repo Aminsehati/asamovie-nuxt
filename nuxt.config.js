@@ -25,7 +25,12 @@ export default {
 
   css: ["@/assets/css/App.css"],
 
-  plugins: [],
+  plugins: [
+    {
+      ssr:false,
+      src : "@/plugins/Toast"
+    }
+  ],
 
   components: true,
   buildModules: [

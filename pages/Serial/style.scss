@@ -1,0 +1,32 @@
+.serial_page {
+  padding-top: 20px;
+  .container__movie {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 40px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .serial_page .filters_box {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .serial_page .container__movie .movie__ {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .serial_page .container__movie .movie__ {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+}
+@media screen and (max-width: 576px) {
+    .serial_page .container__movie .movie__ {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  

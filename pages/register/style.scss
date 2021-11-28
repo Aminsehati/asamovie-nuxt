@@ -1,9 +1,6 @@
 .register-page{
     background: #27282D;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     .box_register{
         background: rgba(34,35,39,0.95);
         box-shadow: 0px 9px 15px 0px rgb(2 2 2 / 60%);
@@ -28,5 +25,23 @@
         .go-to-login{
            padding-bottom: 3.75rem;
         }
+    }
+}
+.register-page .back-to-home{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+.register-page .box-register-wrapper{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width:576px){
+    .register-page .box_register{
+        width: 100%;
+        border-radius: 0;
     }
 }

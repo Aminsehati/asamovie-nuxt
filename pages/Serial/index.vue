@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import "./style.css";
+import "./style.scss";
 export default {
   data() {
     return {
