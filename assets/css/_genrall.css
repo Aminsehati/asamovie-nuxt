@@ -11,7 +11,6 @@ body{
     overflow-x: hidden;
     font-family: IRANSans;
     font-size: 1rem;
-    font-weight: bold;
 }
 
 
@@ -69,3 +68,22 @@ body{
     margin-bottom: 0.5rem;
 }
 /* Marign */
+
+
+/* font size */
+.font-12{
+    font-size: 12px;
+}
+.font-13{
+    font-size: 13px;
+}
+.font-14{
+    font-size: 14px;
+}
+.font-16{
+    font-size: 16px;
+}
+.font-18{
+    font-size: 18px;
+}
+/* font size */

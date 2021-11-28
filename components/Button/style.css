@@ -29,5 +29,20 @@
 .btn.btn-secondary:hover{
     background: #fff;
     color: #000;
-
+}
+.btn-light{
+    background: #E0E0E0;
+    border-radius: 5px;
+    color: #343a40;
+    padding: .65rem 1.5rem;
+    min-width: 120px;
+    font-size: 14px;
+}
+.btn-blue{
+    background: dodgerblue;
+    min-height: 50px;
+}
+.btn-block{
+    width: 100%;
+    display: block;
 }
