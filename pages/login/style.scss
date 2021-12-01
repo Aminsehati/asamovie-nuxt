@@ -1,0 +1,66 @@
+.login-page {
+  background: #27282d;
+  min-height: 100vh;
+  .back-to-home{
+      min-height: 8vh;
+      display: flex;
+      align-items: center;
+      padding-right: 30px;
+  }
+  .box-login-wrapper{
+      min-height: 92vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .box-login-page {
+    width: 380px;
+    background: rgba(34, 35, 39, 0.95);
+    box-shadow: 0px 9px 15px 0px rgb(2 2 2 / 60%);
+    border-radius: 10px;
+    padding-bottom: 3.214rem;
+    .login_form {
+      padding-top: 3.75rem;
+      padding-right: 1.785rem;
+      padding-left: 1.785rem;
+      .form-item {
+          &.field-number{
+              margin-bottom: 40px;
+          }
+          &.field-password{
+              margin-bottom: 60px;
+          }
+        label{
+            margin-bottom: 10px;
+        }
+      }
+    }
+    .forget-to-password{
+        margin: 15px 0;
+    }
+    .login-with-otp{
+        padding: 0 1.785rem;
+    }
+    .actions-box{
+        padding: 25px 1.785rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            border: 1px solid rgba(255,255,255,0.9);
+            font-size: 12px;
+            width: 100px;
+            height: 41px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.3s;
+            &:hover{
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+  }
+}

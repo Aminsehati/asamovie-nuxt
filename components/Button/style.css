@@ -46,3 +46,17 @@
     width: 100%;
     display: block;
 }
+.btn-red{
+    background: #ac3838;
+    min-height: 50px;
+}
+.btn-green{
+    background: #00e8ff94;
+    padding: 18px 0;
+    min-width: 205px;
+    transition: all 300ms ;
+}
+.btn-green:hover{
+    background: #fff;
+    color: #000;
+}

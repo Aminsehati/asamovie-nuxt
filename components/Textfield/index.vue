@@ -4,10 +4,11 @@
       :type="type"
       :value="value"
       @input="updatevalue($event)"
-      class="form-control"
+      :class="['form-control', { light, readonly }]"
       :placeholder="placeholder"
       @keypress="keypress($event)"
       @select="select($event)"
+      :readonly="readonly"
     />
   </div>
 </template>
@@ -32,6 +33,14 @@ export default {
       type: Number,
     },
     isPhoneNumber: {
+      type: Boolean,
+      default: false,
+    },
+    light: {
+      type: Boolean,
+      default: false,
+    },
+    readonly: {
       type: Boolean,
       default: false,
     },

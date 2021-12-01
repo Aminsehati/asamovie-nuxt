@@ -39,19 +39,91 @@
     }
   }
 }
-.header .left__ .auth-area {
-  a {
-    font-size: 12px;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 11px 14px;
-    font-weight: 500;
-    transition: all 0.3s;
-    &:hover {
-      background: #fff;
-      color: #000;
+.header .left__ {
+  display: flex;
+  align-items: center;
+  .auth-area {
+    a {
+      font-size: 12px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      padding: 11px 14px;
       font-weight: 500;
       transition: all 0.3s;
+      &:hover {
+        background: #fff;
+        color: #000;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .wishlist-area a {
+    width: 40px;
+    height: 40px;
+    background: #f0f8ff30;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms;
+    i {
+      font-size: 20px;
+    }
+    &:hover {
+      background: transparent;
+      transition: all 300ms;
+    }
+  }
+  .user-profile {
+    margin-right: 15px;
+    position: relative;
+    .profile-button {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+      }
+    }
+    .dropdown-content {
+      background: #fff;
+      border-radius: 0.25rem;
+      padding: 15px 0 0 ;
+      color: #212529;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      width: 185px;
+      z-index: 9;
+      .phone-number {
+        padding-right: 10px;
+        border-bottom: 1px solid #c0c0c0;
+        padding-bottom: 15px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .list-menu  {
+        padding-top: 10px;
+        li {
+          padding: 10px 15px;
+        }
+      }
+      .notif-box{
+        background: #FC2525;
+        color: #fff;
+        padding: 0.5rem 15px;
+         p {
+           font-size: 12px;
+           padding-top: 5px;
+           padding-bottom: 5px;
+           line-height: 25px;
+           font-weight: 500;
+         }
+      }
     }
   }
 }

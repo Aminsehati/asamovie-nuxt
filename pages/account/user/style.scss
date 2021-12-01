@@ -1,0 +1,52 @@
+.account-user-page {
+  .box-account-box {
+    width: 1140px;
+    margin: 5rem auto;
+    background: #292929;
+    box-shadow: 0 3px 28px #ba1c3a4a;
+    .title {
+      padding: 1.5rem;
+      border-bottom: 1px solid #565656;
+    }
+    .body{
+        padding: 1.5rem 1.5rem 4.285rem;
+        .name-field {
+            .form_group{
+                &:first-child{
+                    margin-left: 25px;
+                }
+            }
+            margin-bottom: 15px;
+        }
+        .phoneNumber-field {
+          .form_group{
+            &:first-child{
+              margin-left: 25px;
+            }
+          }
+        }
+        .password-field{
+          padding-top: 80px;
+          padding-bottom: 50px;
+          .old-password {
+            margin-bottom: 15px;
+            label{
+              margin-bottom: 30px;
+            }
+            .form_group{
+              &:first-child{
+                padding-left: 15px;
+              }
+            }
+          }
+          .new-password{
+            .form_group{
+              &:first-child{
+                margin-left: 25px;
+              }
+            }
+          }
+        }
+    }
+  }
+}

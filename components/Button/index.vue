@@ -26,6 +26,14 @@ export default {
         blue:{
             type:Boolean,
             default:false
+        },
+        red:{
+            type:Boolean,
+            default:false,
+        },
+        green:{
+            type:Boolean,
+            default:false,
         }
     },
     computed:{
@@ -37,7 +45,9 @@ export default {
                     'btn-primary':this.primary,
                     'btn-secondary' : this.secondary,
                     'btn-light':this.light,
-                    'btn-blue':this.blue
+                    'btn-blue':this.blue,
+                    'btn-red':this.red,
+                    'btn-green':this.green
                 }
             ]
         }

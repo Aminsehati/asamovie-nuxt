@@ -13,6 +13,17 @@
     color: #fff;
     text-align: right !important; 
 }
-.form_group .form-control::-moz-placeholder{
-    color: red;
+.form_group .form-control.light{
+    background: #fff;
+    color: #000;
+    border: 1px solid #ced4da;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.form_group .form-control.readonly{
+    background: #B5B5B5;
+}
+.form_group .form-control.light::placeholder{
+    color: #000;
 }
