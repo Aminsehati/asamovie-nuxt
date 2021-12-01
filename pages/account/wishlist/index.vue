@@ -25,6 +25,7 @@
 <script>
 import "./style.css";
 export default {
+  middleware: ["auth"],
   data(){
     return {
       wishList:[]

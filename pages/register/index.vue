@@ -26,7 +26,7 @@
           <Button block blue> ثبت نام </Button>
         </form>
         <div class="go-to-login text-center">
-          <nuxt-link to="/register" class="font-12"> برگشت به ورود </nuxt-link>
+          <nuxt-link to="/login" class="font-12"> برگشت به ورود </nuxt-link>
         </div>
       </div>
     </div>
@@ -38,6 +38,7 @@
 import "./style.scss";
 export default {
   layout: "auth",
+  middleware:"admin",
   data() {
     return {
       infoUser: {
@@ -55,7 +56,27 @@ export default {
         toast.title = "اطلاع!";
         toast.description = "لطفا تمام اطلاعات موردنیاز را پر کنید";
       } else {
+        this.registerUser();
       }
+    },
+    async registerUser() {
+      const toast = this.$refs.toast;
+      toast.error = false;
+      try {
+        const httpResponse = await this.$axios.$post("/auth/register", {
+          ...this.infoUser,
+        });
+        const { message, accessToken } = httpResponse;
+        if (httpResponse.isSuccess) {
+          localStorage.setItem("token",accessToken);
+          this.$store.commit("user/setStatusLogin",!!localStorage.getItem("token"))
+          this.$router.push("/");
+        } else {
+          toast.error = true;
+          toast.title = "خطا!";
+          toast.description = message;
+        }
+      } catch (error) {}
     },
   },
 };

@@ -1,4 +1,5 @@
 export default {
+  ssr:false,
   head: {
     title: "nuxt-asamovie",
     htmlAttrs: {
@@ -22,24 +23,22 @@ export default {
       },
     ],
   },
-
   css: ["@/assets/css/App.css"],
-
   plugins: [
     {
-      ssr:false,
-      src : "@/plugins/Toast"
-    }
+      ssr: false,
+      src: "@/plugins/Toast",
+    },
   ],
-
   components: true,
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module',
     "@nuxtjs/tailwindcss",
   ],
-  modules: ["@nuxtjs/axios", "@nuxtjs/auth-next"],
-  axios: {},
+  modules: ["@nuxtjs/axios"],
+  axios: {
+    baseURL: "http://localhost:5000/api/v1",
+  },
   build: {
     loaders: {
       sass: {
