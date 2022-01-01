@@ -1,0 +1,6 @@
+{
+    "category":{
+        "url":"/category",
+        "method":"get"
+    }
+}

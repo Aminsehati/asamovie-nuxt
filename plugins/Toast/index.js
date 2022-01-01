@@ -1,8 +1,11 @@
-import Vue from 'vue'
-import Toast from '@/components/Toast';
-Vue.component("Toast",Toast);
-export default (context , inject)=>{
-    inject("toast",(status)=>{
-        // console.log(context);
-    })
-}
+import Vue from "vue";
+import Toast from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
+
+const options = {
+  // You can set your default options here
+};
+
+
+Vue.use(Toast, options);

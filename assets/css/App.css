@@ -1,3 +1,4 @@
 @import './fonts.css';
 @import './_genrall.css';
-@import './respansive.css'
+@import './respansive.css';
+@import './tailwind.css';

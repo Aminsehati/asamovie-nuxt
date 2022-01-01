@@ -1,0 +1,5 @@
+{
+  "BaseUrlAdmin": "https://adminapi.avin.ir/api/v1/",
+  "BaseUrlApi": "https://192.168.0.166:5100/api",
+  "coreApiBaseUrl": "https://api.avin.ir/"
+}

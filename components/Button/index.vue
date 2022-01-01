@@ -34,6 +34,10 @@ export default {
         green:{
             type:Boolean,
             default:false,
+        },
+        large:{
+            type:Boolean,
+            default:false
         }
     },
     computed:{
@@ -43,6 +47,7 @@ export default {
                 {
                     'btn-block':this.block,
                     'btn-primary':this.primary,
+                    'btn-large':this.large,
                     'btn-secondary' : this.secondary,
                     'btn-light':this.light,
                     'btn-blue':this.blue,

@@ -45,6 +45,14 @@ export default {
     filtersInfo : {
       type:Object,
       default:()=>{}
+    },
+    genreItem:{
+      type:Array,
+      default:()=>[]
+    },
+    CountryItem:{
+      type:Array,
+      default:()=>[]
     }
   },
   data() {
@@ -62,55 +70,55 @@ export default {
           value: "Serial",
         },
       ],
-      genreItem: [
-        {
-          id: 1,
-          name: "Music",
-          value: "Music",
-        },
-        {
-          id: 2,
-          name: "اجتماعی",
-          value: "social",
-        },
-        {
-          id: 3,
-          name: "آسکار",
-          value: "oscar",
-        },
-        {
-          id: 4,
-          name: "اکشن",
-          value: "action",
-        },
-        {
-          id: 5,
-          name: "انیمه",
-          value: "anime",
-        },
-        {
-          id: 6,
-          name: "انیمیشن",
-          value: "animation",
-        },
-      ],
-      CountryItem: [
-        {
-          id: 22,
-          name: "آفریقای جنوبی",
-          value: "South-Africa",
-        },
-        {
-          id: 32,
-          name: "آلمان",
-          value: "Germany",
-        },
-        {
-          id: 42,
-          name: "آمریکا",
-          value: "america",
-        },
-      ],
+      // genreItem: [
+      //   {
+      //     id: 1,
+      //     name: "Music",
+      //     value: "Music",
+      //   },
+      //   {
+      //     id: 2,
+      //     name: "اجتماعی",
+      //     value: "social",
+      //   },
+      //   {
+      //     id: 3,
+      //     name: "آسکار",
+      //     value: "oscar",
+      //   },
+      //   {
+      //     id: 4,
+      //     name: "اکشن",
+      //     value: "action",
+      //   },
+      //   {
+      //     id: 5,
+      //     name: "انیمه",
+      //     value: "anime",
+      //   },
+      //   {
+      //     id: 6,
+      //     name: "انیمیشن",
+      //     value: "animation",
+      //   },
+      // ],
+      // CountryItem: [
+      //   {
+      //     id: 22,
+      //     name: "آفریقای جنوبی",
+      //     value: "South-Africa",
+      //   },
+      //   {
+      //     id: 32,
+      //     name: "آلمان",
+      //     value: "Germany",
+      //   },
+      //   {
+      //     id: 42,
+      //     name: "آمریکا",
+      //     value: "america",
+      //   },
+      // ],
       languagesItem: [
         {
           id: 1,

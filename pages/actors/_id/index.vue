@@ -29,10 +29,8 @@
 </template>
 
 <script>
-import iconsMixin from "@/mixins/icons.js";
 import "./style.scss";
 export default {
-  mixins: [iconsMixin],
   data() {
     return {
       filters: {

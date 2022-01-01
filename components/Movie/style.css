@@ -51,13 +51,29 @@
     border-radius: 6px;
     background: linear-gradient(to top,rgb(0,0,0,.9),rgba(18,18,18,.51));
     opacity: 0;
-    padding: 0.7rem;
+    padding: 0.7rem 0.7rem 20px;
     transition: all 0.3s;
+}
+.movie__ .movie__cover .imdb-content img{
+    width: 32px;
+    height: 13px;
+    position: relative;
+    margin-left: 6px;
+    border-radius: 0;
+}
+.movie__ .movie__cover .movie_info_box .title_original{
+    white-space: nowrap;
+    display: block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
 }
 .movie__ .movie__cover:hover  .movie-item_overlay{
     opacity: 1;
     transition: all 0.3s;
 }
-.movie__ .movie__cover:hover  .movie-item_overlay p {
-    font-size: 12px;
+.movie__  .category-movie{
+    white-space: nowrap;
+    display: block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
 }

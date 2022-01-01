@@ -1,0 +1,6 @@
+{
+    "country":{
+        "url":"/country",
+        "method":"get"
+    }
+}

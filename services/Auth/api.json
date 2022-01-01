@@ -1,0 +1,10 @@
+{
+    "register":{
+        "url":"/register",
+        "method":"post"
+    },
+    "login":{
+        "url":"/login",
+        "method":"post"
+    }
+}

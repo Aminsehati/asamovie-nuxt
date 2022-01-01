@@ -4,6 +4,7 @@ export const state = () => ({
     firstName: "",
     lastName: "",
     isLogin: !!localStorage.getItem("token"),
+    token: localStorage["token"],
   },
 });
 export const getters = {
@@ -14,5 +15,14 @@ export const getters = {
 export const mutations = {
   setStatusLogin(state, item) {
     state.user.isLogin = item;
+  },
+  resetToken(state) {
+    state.user = {
+      phone: "",
+      firstName: "",
+      lastName: "",
+      isLogin:false,
+      token:""
+    };
   },
 };

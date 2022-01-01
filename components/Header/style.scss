@@ -1,6 +1,7 @@
 .header {
   display: flex;
   align-items: center;
+  z-index: 99;
 }
 .header .container-fluid {
   display: flex;
@@ -11,6 +12,7 @@
 .header .right__ {
   display: flex;
   align-items: center;
+  z-index: 99;
   .navigation {
     padding-top: 10px;
     li {
@@ -42,6 +44,7 @@
 .header .left__ {
   display: flex;
   align-items: center;
+  z-index: 99;
   .auth-area {
     a {
       font-size: 12px;

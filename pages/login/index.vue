@@ -42,12 +42,10 @@
     <Toast ref="toast" />
   </div>
 </template>
-
 <script>
 import "./style.scss";
 export default {
   layout: "auth",
-  middleware:"admin",
   data() {
     return {
       userInfo: {
@@ -64,28 +62,32 @@ export default {
         toast.info = true;
         toast.title = "اطلاع!";
         toast.description = "لطفا تمام اطلاعات موردنیاز را پر کنید";
-      }else{
+      } else {
         this.loginUser();
       }
     },
-    async loginUser(){
+    async loginUser() {
+      const toast = this.$refs.toast;
+      toast.error = false;
       try {
-        const httpReponse = await this.$axios.$post("/auth/login",{
-          ...this.userInfo
-        })
-        const {isSuccess,accessToken} = httpReponse;
+        const params = {
+          phone: this.userInfo.phone,
+          password: this.userInfo.password,
+        };
+        const httpResponse = await this.$auth.login(params);
+        console.log(httpResponse);
+        const { isSuccess, token } = httpResponse;
         if(isSuccess){
-          localStorage.setItem('token',accessToken);
-          this.$store.commit("user/setStatusLogin",!!localStorage.getItem("token"))
+          localStorage.setItem("token",token);
           this.$router.push("/")
         }
       } catch (error) {
-        
+        const { message } = error.response.data;
+        toast.error = true;
+        toast.title = "خطا!";
+        toast.description = message;
       }
-    }
+    },
   },
 };
 </script>
-
-<style>
-</style>

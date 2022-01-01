@@ -1,0 +1,10 @@
+{
+    "movieItmes":{
+        "url":"/movie",
+        "method":"get"
+    },
+    "movieItem":{
+        "url":"/movie/",
+        "method":"get"
+    }
+}
