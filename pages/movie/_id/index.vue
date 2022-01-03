@@ -1,10 +1,10 @@
 <template>
   <div class="movie-single-page">
-    <div class="movie-single-banner-sec"></div>
+    <div class="movie-single-banner-sec" :style="stylesCoverImage"></div>
     <div class="container-fluid pb-50">
       <div class="movie-sigle-content">
         <div class="logo_movie">
-          <img :src="singleMovieInfo.imgUrlLogoMovie" />
+          <img :src="singleMovieInfo.imageLogoMovie" />
         </div>
         <div class="title_movie flex items-center">
           <h2 class="text-20 font-500 ml-10">
@@ -96,8 +96,20 @@
           {{ singleMovieInfo.description }}
         </p>
       </div>
-      <div class="actors-movie mt-50">
-        <h5>عوامل :</h5>
+      <div class="actors__movie mt-50">
+        <h5 class="mb-20">عوامل :</h5>
+        <swiper class="swiper" :options="swiperOption" ref="mySwiperRef">
+          <swiper-slide v-for="actor in singleMovieInfo.actors" :key="actor.id">
+            <div class="actors-movie-item">
+              <img :src="`${imageUrl}${actor.imgUrl}`" class="mx-auto"/>
+              <p class="text-center mt-20 actor-name text-12">
+                {{
+                  actor.name
+                }}
+              </p>
+            </div>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
   </div>
@@ -109,17 +121,12 @@ export default {
   data() {
     return {
       singleMovieInfo: {
-        imgUrlLogoMovie:
-          "https://asamovie.ir/wp-content/uploads/2021/12/png-clipart-sniper-elite-v2-sniper-elite-nazi-zombie-army-sniper-elite-iii-zombie-army-trilogy-sniper-elite-game-emblem.png",
+        imageLogoMovie: "",
         title: "",
         year: null,
         categories: [],
-        countries: [
-          {
-            id: 1,
-            name: "هند",
-          },
-        ],
+        countries: [],
+        imageCoverMovie: "",
         director: [
           {
             id: 1,
@@ -132,51 +139,25 @@ export default {
             name: "Sun Jun",
           },
         ],
-        actors: [
-          {
-            id: 1,
-            name: "Huang Meng",
-          },
-          {
-            id: 2,
-            name: "Huang YiXuan",
-          },
-          {
-            id: 3,
-            name: "Li Meng Meng",
-          },
-          {
-            id: 4,
-            name: "Li Shu",
-          },
-          {
-            id: 5,
-            name: "Shi Yan Neng",
-          },
-          {
-            id: 6,
-            name: "Wang Wen Jie",
-          },
-          {
-            id: 7,
-            name: "Zhu Yi",
-          },
-          {
-            id: 8,
-            name: "Tang JieChao",
-          },
-          {
-            id: 9,
-            name: "Sun Jun",
-          },
-        ],
+        actors: [],
         description: "",
         imdb: null,
+      },
+      swiperOption: {
+        slidesPerView: 9,
+        loop: false,
       },
     };
   },
   mounted() {
     this.getMovieItem();
+  },
+  computed: {
+    stylesCoverImage() {
+      return {
+        background: `url(${this.singleMovieInfo.imageCoverMovie})`,
+      };
+    },
   },
   methods: {
     async getMovieItem() {
@@ -184,17 +165,18 @@ export default {
         const { id } = this.$route.params;
         console.log(id);
         const httpReponse = await this.$Movie.getMovieItem(id);
-
         const { movie } = httpReponse.data;
-        console.log(movie.countries);
         this.singleMovieInfo = {
           ...this.singleMovieInfo,
           title: movie?.title,
           year: movie?.year,
           description: movie?.description,
           imdb: movie?.imdb,
-          categories:movie.category || [],
-          countries:movie?.countries || []
+          categories: movie.category || [],
+          countries: movie?.countries || [],
+          imageLogoMovie: `${this.imageUrl}${movie.imageLogoMovie}`,
+          imageCoverMovie: `${this.imageUrl}${movie.imageCoverMovie}`,
+          actors: movie.actors,
         };
       } catch (error) {
         return this.$nuxt.error({ statusCode: 404 });

@@ -52,6 +52,11 @@ export default {
     },
     {
       ssr: false,
+      src: "@/plugins/swiper.js",
+    },
+    ///services
+    {
+      ssr: false,
       src: "@/services/Auth",
     },
     {

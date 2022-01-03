@@ -1,7 +1,6 @@
 .movie-single-page {
   .movie-single-banner-sec {
     width: 100%;
-    background: url("https://asamovie.ir/wp-content/uploads/2021/12/f4777c8e160876ff5a9c51c1f23ce53c-1.jpg");
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover !important;
@@ -30,7 +29,7 @@
     .logo_movie {
       max-width: 15vw;
       max-height: 15vh;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .movie-feature {
       .imdb img {
@@ -45,10 +44,8 @@
       display: block;
       overflow-x: hidden;
       text-overflow: ellipsis;
-      span {
-      }
     }
-    .item-box{
+    .item-box {
       background: #ffffff26;
       width: 42px;
       height: 42px;
@@ -57,9 +54,30 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      &:hover{
+      &:hover {
         background: #ffffff45;
       }
     }
+  }
+  .actors-movie-item {
+    text-align: center;
+    img {
+      border-radius: 50%;
+      width: 125px;
+      height: 125px;
+    }
+  }
+}
+@media screen and (max-width:992px){
+  .movie-single-page .movie-sigle-content{
+    flex: 0 0 750px;
+    max-width: 750px;
+  }
+  .movie-single-page .movie-sigle-content .actor-movie{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .movie-single-page .movie-single-banner-sec{
+    min-height: 300px;
   }
 }
