@@ -1,0 +1,13 @@
+.movie-slider {
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    hr {
+      flex-grow: 1;
+      background-color: #ffffff26;
+      margin: 0 10px;
+      border-top: 1px solid rgba(0,0,0,.1);
+    }
+  }
+}

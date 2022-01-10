@@ -36,13 +36,9 @@ export default {
       },
     ],
   },
-  loading:false,
+  loading: false,
   css: ["@/assets/css/App.css"],
   plugins: [{
-      ssr: false,
-      src: "@/plugins/Toast",
-    },
-    {
       ssr: false,
       src: "@/plugins/Api",
     },
@@ -53,6 +49,14 @@ export default {
     {
       ssr: false,
       src: "@/plugins/swiper.js",
+    },
+    {
+      ssr: false,
+      src: "@/plugins/checkAuthenticate.js",
+    },
+    {
+      ssr: false,
+      src: "@/plugins/common.service.js",
     },
     ///services
     {
@@ -73,15 +77,16 @@ export default {
     },
     {
       ssr: false,
-      src: "@/plugins/common.service.js",
-    },
+      src: "@/services/comment",
+    }
+    
   ],
   components: true,
   buildModules: [
     // '@nuxtjs/eslint-module',
     "@nuxtjs/tailwindcss",
   ],
-  modules: ["@nuxtjs/axios" ],
+  modules: ["@nuxtjs/axios"],
   axios: {
     baseURL: "http://localhost:7600/api/v1",
   },

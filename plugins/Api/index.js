@@ -43,10 +43,8 @@ const call = (arg) => {
         .then(res => {
           if (method != "get" && msg) {
             // success message after submit
-            application.$methods.toast("success", msg);
           }
           if (res.data.statusCode != 200) {
-            application.$methods.toast('error', res?.data?.message)
           }
           if (storageName) {
             if (localStorage.getItem('call_' + storageName)) {
@@ -75,11 +73,8 @@ const call = (arg) => {
           }
           else if (err?.response?.status != 200) {
             if (err?.response?.data?.message) {
-              application.$methods.toast("error",err.response.data.message)
-              // application.$methods.toast("error", err.response.data.message);
             }
             else {
-              // application.$methods.toast("error", message);
             }
 
           }

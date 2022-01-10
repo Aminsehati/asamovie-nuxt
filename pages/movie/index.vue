@@ -9,7 +9,10 @@
       />
     </div>
     <div class="container-fluid">
-      <div class="container__movie">
+      <div v-if="loading">
+          <Spinner/>
+      </div>
+      <div class="container__movie" v-else>
         <Movie
           v-for="item in movieItem"
           :key="item.id"
@@ -34,18 +37,19 @@ export default {
         age: this.$route.query.age || "All-ages",
         isHD: this.$route.query.isHD || false,
       },
-      categoryItems:[],
-      countryItems:[]
+      loading:false,
+      categoryItems: [],
+      countryItems: [],
     };
   },
   async fetch() {
     this.getCatgeoryItems();
-    this.getCountryItems()
-    this.getMovieItems()
+    this.getCountryItems();
+    this.getMovieItems();
   },
   methods: {
     filterMovie(data) {
-      console.log("data",data);
+      console.log("data", data);
     },
     async getCatgeoryItems() {
       try {
@@ -54,48 +58,46 @@ export default {
           skip: 1,
         };
         const httpReponse = await this.$category.getCategoryItems(params);
-        this.categoryItems = httpReponse.data.items.map(item=>{
+        this.categoryItems = httpReponse.data.items.map((item) => {
           return {
-            id : item._id,
-            name:item.title,
-            value:item._id
-          }
-        })
+            id: item._id,
+            name: item.title,
+            value: item._id,
+          };
+        });
         console.log(categoryItems);
       } catch (error) {}
     },
-    async getCountryItems(){
+    async getCountryItems() {
       try {
         const httpReponse = await this.$country.getCountryItems();
-        this.countryItems = httpReponse.data.country.map(item=>{
+        this.countryItems = httpReponse.data.country.map((item) => {
           return {
             id: item?._id,
-            name:item?.name
-          }
-        })
-      } catch (error) {
-        
-      }
+            name: item?.name,
+          };
+        });
+      } catch (error) {}
     },
-    async getMovieItems(){
+    async getMovieItems() {
+      this.loading = true ;
       try {
         const httpReponse = await this.$Movie.getMovieItems();
         console.log(httpReponse);
-        this.movieItem = httpReponse.data.movie.map(item=>{
+        this.movieItem = httpReponse.data.movie.map((item) => {
           return {
-            id : item._id,
-            title:item?.title,
-            year:item?.year,
-            imdb:item?.imdb,
-            image : item?.imgUrl,
-            title_original:item?.title_original,
-            category:item?.category
-          }
-        })
-      } catch (error) {
-        
-      }
-    }
+            id: item._id,
+            title: item?.title,
+            year: item?.year,
+            imdb: item?.imdb,
+            image: item?.imgUrl,
+            title_original: item?.title_original,
+            category: item?.category,
+          };
+        });
+        this.loading = false ;
+      } catch (error) {}
+    },
   },
 };
 </script>

@@ -1,0 +1,6 @@
+{
+    "listComments":{
+        "url":"/comments",
+        "method":"get"
+    }
+}

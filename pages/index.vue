@@ -1,10 +1,20 @@
 <template>
   <div class="Home">
-    <h2>Home</h2>
+    <div class="container-fluid">
+     <MovieSlider/>
+    </div>
   </div>
 </template>
 
 <script>
+import "./style.scss";
 export default {
+  data(){
+    return {
+      actionItem:{
+        title:"اکشن"
+      }
+    }
+  }
 };
 </script>
