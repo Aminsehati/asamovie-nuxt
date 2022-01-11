@@ -119,7 +119,11 @@
             </swiper-slide>
           </swiper>
         </div>
-        <CommentBox :items="commnetItems"/>
+        <CommentBox
+          :items="commnetItems"
+          @sendNewComment="sendComment"
+          @success="getListComments"
+        />
       </div>
     </div>
   </div>
@@ -156,7 +160,7 @@ export default {
       filters: {
         loading: false,
       },
-      commnetItems:[],
+      commnetItems: [],
       swiperOption: {
         slidesPerView: 9,
         loop: false,
@@ -203,8 +207,21 @@ export default {
     async getListComments() {
       try {
         const { id } = this.$route.params;
-        const httpResponse = await this.$comment.getListComments(id);
-        this.commnetItems = httpResponse.data.items
+        const params = {
+          mediaId : id
+        }
+        const httpResponse = await this.$comment.getListComments(params);
+        this.commnetItems = httpResponse.data.items;
+      } catch (error) {}
+    },
+    async sendComment(value) {
+      try {
+        const { id } = this.$route.params;
+        const params = {
+          mediaId: id,
+          body: value,
+        };
+        const httpResponse = await this.$comment.addCommnet(params);
       } catch (error) {}
     },
   },

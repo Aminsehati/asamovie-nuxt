@@ -1,8 +1,5 @@
 export const state = () => ({
   user: {
-    phone: "",
-    firstName: "",
-    lastName: "",
     isLogin: !!localStorage.getItem("token"),
     token: localStorage["token"],
   },
@@ -18,9 +15,6 @@ export const mutations = {
   },
   resetToken(state) {
     state.user = {
-      phone: "",
-      firstName: "",
-      lastName: "",
       isLogin:false,
       token:""
     };

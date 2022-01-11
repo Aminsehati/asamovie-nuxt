@@ -1,7 +1,7 @@
 .comment-box {
   background-color: #ffffff0f;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 1rem 1.428rem;
   max-width: 1100px;
   margin: 80px auto 0;
   .comment-box-header {
@@ -9,6 +9,7 @@
   }
   .send-comment {
     display: flex;
+    margin-bottom: 45px;
     .form_group {
       flex: 1 1 0;
     }

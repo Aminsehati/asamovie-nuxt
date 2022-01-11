@@ -1,6 +1,10 @@
 {
-    "listComments":{
-        "url":"/comments",
-        "method":"get"
-    }
+  "listComments": {
+    "url": "/comments",
+    "method": "get"
+  },
+  "addComment": {
+    "url": "/comments",
+    "method": "post"
+  }
 }

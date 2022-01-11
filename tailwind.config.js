@@ -29,7 +29,8 @@ module.exports = {
     },
     colors: {
       grey: "#b9c3c3",
-      grey1:"#c3c3c3"
+      grey1:"#c3c3c3",
+      grey2:"#aaa"
     },
     extend: {},
   },

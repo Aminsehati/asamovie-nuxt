@@ -13,4 +13,11 @@ class App {
       data: Data,
     });
   }
+  addCommnet(Data) {
+    return _this.$call({
+      url: api.addComment.url,
+      method: api.addComment.method,
+      data: Data,
+    });
+  }
 }
