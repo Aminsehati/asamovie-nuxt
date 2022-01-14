@@ -1,5 +1,5 @@
 export default {
-  ssr: false,
+  ssr:false,
   head: {
     title: "nuxt-asamovie",
     htmlAttrs: {
