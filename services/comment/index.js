@@ -14,10 +14,16 @@ class App {
     });
   }
   addCommnet(Data) {
+    const token = localStorage.token || "";
     return _this.$call({
       url: api.addComment.url,
       method: api.addComment.method,
       data: Data,
+      options: {
+        headers: {
+          Authorization: `bearer ${token}`
+        }
+      }
     });
   }
 }

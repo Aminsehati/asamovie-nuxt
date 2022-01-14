@@ -4,7 +4,7 @@
       <h2>نظرات کاربران</h2>
     </div>
     <div class="comment-box-body">
-      <div class="send-comment">
+      <div class="send-comment" v-if="userInfo.isLogin">
         <Textfield
           light
           placeholder="دیدگاه خود را بنویسید"
@@ -18,6 +18,7 @@
 </template>
 <script>
 import "./style.scss";
+import { mapGetters } from "vuex";
 export default {
   props: {
     items: {
@@ -32,17 +33,22 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapGetters({
+      userInfo: "user/getUser",
+    }),
+  },
   methods: {
     async sendComment() {
       try {
         const { id } = this.$route.params;
         const params = {
-          mediaId : id ,
-          body : this.commentInfo.body
-        }
+          mediaId: id,
+          body: this.commentInfo.body,
+        };
         const httpResponse = await this.$comment.addCommnet(params);
         this.$emit("success");
-        this.commentInfo.body = ""
+        this.commentInfo.body = "";
       } catch (error) {}
     },
   },

@@ -68,6 +68,9 @@
     }
   }
 }
+.container-loading{
+  min-height: 60vh;
+}
 @media screen and (max-width:992px){
   .movie-single-page .movie-sigle-content{
     flex: 0 0 750px;
