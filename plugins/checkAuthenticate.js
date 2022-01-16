@@ -20,33 +20,32 @@ export default function (context, inject) {
 
 class Application {
   constructor() {
-    console.log('checkAuthenticate Init');
     //Application.prototype.lockDevTools()
     Application.prototype.checkRouterAndAuthenticate()
   }
 
   checkRouterAndAuthenticate() {
-    if (localStorage.token) {
-      axios.defaults.headers = {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
-        "authorization": `Bearer ${localStorage.token}`
-      }
+    // if (localStorage.token) {
+    //   axios.defaults.headers = {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Headers": "*",
+    //     "authorization": `Bearer ${localStorage.token}`
+    //   }
 
-      if (window.location.pathname.indexOf('login') > -1) {
-        window.location.href = window.location.origin
-      }
-    } else {
-      localStorage.clear()
-      axios.defaults.headers = {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
-        "authorization": ""
-      }
-      if (window.location.pathname.indexOf('login') <= -1) {
-        window.location.href = window.location.origin + '/login';
-      }
-    }
+    //   if (window.location.pathname.indexOf('login') > -1) {
+    //     window.location.href = window.location.origin
+    //   }
+    // } else {
+    //   localStorage.clear()
+    //   axios.defaults.headers = {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Headers": "*",
+    //     "authorization": ""
+    //   }
+    //   if (window.location.pathname.indexOf('login') <= -1) {
+    //     window.location.href = window.location.origin + '/login';
+    //   }
+    // }
   }
 
   logOut() {

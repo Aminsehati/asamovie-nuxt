@@ -51,6 +51,12 @@
             </ul>
           </div>
         </div>
+        <div class="left___">
+          <h4 class="text-16 mb-20">
+            نمادها
+          </h4>
+            <img :src="namadLogo"/>
+        </div>
       </div>
     </div>
   </footer>
@@ -103,6 +109,7 @@ export default {
           name: "هیجان انگیز",
         },
       ],
+      namadLogo : require("../../assets/img/footer/SAMANDEHI1-min.png")
     };
   },
 };

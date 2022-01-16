@@ -5,7 +5,6 @@ var application
 // inject api methods and properties in nuxt app
 export default function ({ app, store }, inject) {
   application = app
-  // console.log(app.$auth.getUserToken());
   inject('call', call)
   inject('api', api)
 }
@@ -55,19 +54,17 @@ const call = (arg) => {
           resolve(res?.data);
         })
         .catch(err => {
-          console.log("err",{err});
           let message = ''
           if (err.response) {
             message = err?.response?.data?.message;
-            console.log("message",message);
           } else {
             message = 'خطا در برقراری ارتباط با سرور'
           }
 
           if (err?.response?.status == 401) {
-            // localStorage.removeItem('auth.loggedIn');
-            // localStorage.removeItem('token');
-            // window.location.href = window.location.origin + '/login';
+            localStorage.removeItem('auth.loggedIn');
+            localStorage.removeItem('token');
+            window.location.href = window.location.origin + '/';
           }
           else if (err?.response?.status != 200) {
             if (err?.response?.data?.message) {
@@ -76,8 +73,6 @@ const call = (arg) => {
             }
 
           }
-          console.log(err.response);
-          // error handling
           reject(err);
         });
     } else {
@@ -85,7 +80,6 @@ const call = (arg) => {
       if (local) {
         resolve(local)
       } else {
-        application.$methods.toast("show", "شما آفلاین هستید.");
         reject(true)
       }
 

@@ -69,7 +69,7 @@ export default {
       swiperOption: {
         slidesPerView: 7.4,
         loop: false,
-        spaceBetween: 15,
+        spaceBetween: 15
       },
     };
   },

@@ -65,7 +65,6 @@ export default {
             value: item._id,
           };
         });
-        console.log(categoryItems);
       } catch (error) {}
     },
     async getCountryItems() {
@@ -83,7 +82,6 @@ export default {
       this.loading = true ;
       try {
         const httpReponse = await this.$Movie.getMovieItems();
-        console.log(httpReponse);
         this.movieItem = httpReponse.data.movie.map((item) => {
           return {
             id: item._id,

@@ -51,12 +51,12 @@ const persionCalender = [{
 const mixins = {
   data() {
     return {
-      imageUrl: "http://localhost:7600/uploads/image/",
+      imageUrl: "https://api-asamovie.vercel.app/uploads/image/",
       avatarIcon: require("~/assets/img/actors/profile.png"),
       icons: {
-        imdb: require('@/assets/icons/imdb.png'),
-        like:require('@/assets/icons/like.svg'),
-        disLike:require('@/assets/icons/dislike.svg')
+        imdb: require('~/assets/icons/imdb.png'),
+        like:require('~/assets/icons/like.svg'),
+        disLike:require('~/assets/icons/dislike.svg')
       }
     }
   },

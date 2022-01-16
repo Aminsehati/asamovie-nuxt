@@ -1,5 +1,5 @@
 export default {
-  ssr:false,
+  ssr: true,
   target: 'static',
   head: {
     title: "nuxt-asamovie",
@@ -44,7 +44,7 @@ export default {
       src: "@/plugins/Api",
     },
     {
-      ssr: false,
+      ssr: true,
       src: "@/plugins/mixin",
     },
     {
@@ -79,8 +79,12 @@ export default {
     {
       ssr: false,
       src: "@/services/comment",
+    },
+    {
+      ssr: false,
+      src: "@/services/account",
     }
-    
+
   ],
   components: true,
   buildModules: [
@@ -89,7 +93,7 @@ export default {
   ],
   modules: ["@nuxtjs/axios"],
   axios: {
-    baseURL: "http://localhost:7600/api/v1",
+    baseURL: "https://api-asamovie.vercel.app/api/v1",
   },
   build: {
     loaders: {

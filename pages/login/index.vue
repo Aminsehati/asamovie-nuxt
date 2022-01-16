@@ -75,7 +75,7 @@ export default {
           password: this.userInfo.password,
         };
         const httpResponse = await this.$auth.login(params);
-        console.log(httpResponse);
+
         const { isSuccess, token } = httpResponse;
         if(isSuccess){
           localStorage.setItem("token",token);

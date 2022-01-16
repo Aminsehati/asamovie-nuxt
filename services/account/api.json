@@ -1,0 +1,6 @@
+{
+    "userInfo":{
+        "method":"get",
+        "url":"/account/user"
+    }
+}

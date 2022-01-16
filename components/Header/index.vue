@@ -33,7 +33,11 @@
             <img :src="icons.profile" />
           </span>
           <div class="dropdown-content" v-if="showDropdown">
-            <div class="phone-number">9364384344</div>
+            <div class="phone-number">
+              {{
+                phoneNumber
+              }}
+            </div>
             <ul class="list-menu">
               <li @click="showDropdown = !showDropdown">
                 <nuxt-link to="/account/user" class="font-12 font-500">
@@ -75,6 +79,12 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
+  props:{
+    phoneNumber:{
+      type:String,
+      default:""
+    }
+  },
   data() {
     return {
       navbarItem: [

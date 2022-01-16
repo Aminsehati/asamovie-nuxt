@@ -84,7 +84,6 @@ export default {
       try {
         const httpReponse = await this.$axios.$get("/account/user");
         const { data } = httpReponse;
-        console.log(httpReponse);
         this.userInfo = {
           ...this.userInfo,
           firstName: data?.firstName,
@@ -103,7 +102,6 @@ export default {
         const httpResponse = await this.$axios.$put("/account/user", {
           ...params
         });
-        console.log(httpResponse);
       } catch (error) {}
     },
   },
