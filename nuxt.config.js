@@ -1,6 +1,6 @@
 export default {
   ssr: true,
-  target: 'static',
+  target: 'server',
   head: {
     title: "nuxt-asamovie",
     htmlAttrs: {
