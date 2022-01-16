@@ -19,6 +19,7 @@
     "heroku": "^7.59.2",
     "jalali-moment": "^3.3.10",
     "nuxt": "^2.15.7",
+    "swiper": "^6.8.4",
     "vue-awesome-swiper": "^4.1.1",
     "vue-toastification": "^1.7.14"
   },

@@ -4732,12 +4732,12 @@
     "domelementtype" "^2.0.1"
     "entities" "^2.0.0"
 
-"dom7@^2.1.5":
-  "integrity" "sha512-xnhwVgyOh3eD++/XGtH+5qBwYTgCm0aW91GFgPJ3XG+jlsRLyJivnbP0QmUBFhI+Oaz9FV0s7cxgXHezwOEBYA=="
-  "resolved" "https://registry.npmjs.org/dom7/-/dom7-2.1.5.tgz"
-  "version" "2.1.5"
+"dom7@^3.0.0":
+  "integrity" "sha512-oNlcUdHsC4zb7Msx7JN3K0Nro1dzJ48knvBOnDPKJ2GV9wl1i5vydJZUSyOfrkKFDZEud/jBsTk92S/VGSAe/g=="
+  "resolved" "https://registry.npmjs.org/dom7/-/dom7-3.0.0.tgz"
+  "version" "3.0.0"
   dependencies:
-    "ssr-window" "^2.0.0"
+    "ssr-window" "^3.0.0-alpha.1"
 
 "domain-browser@^1.1.1":
   "integrity" "sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA=="
@@ -10754,10 +10754,10 @@
     "cpu-features" "0.0.2"
     "nan" "^2.15.0"
 
-"ssr-window@^2.0.0":
-  "integrity" "sha512-NXzN+/HPObKAx191H3zKlYomE5WrVIkoCB5IaSdvKokxTpjBdWfr0RaP+1Z5KOfDT0ZVz+2tdtiBkhsEQ9p+0A=="
-  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-2.0.0.tgz"
-  "version" "2.0.0"
+"ssr-window@^3.0.0", "ssr-window@^3.0.0-alpha.1":
+  "integrity" "sha512-q+8UfWDg9Itrg0yWK7oe5p/XRCJpJF9OBtXfOPgSJl+u3Xd5KI328RUEvUqSMVM9CiQUEf1QdBzJMkYGErj9QA=="
+  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-3.0.0.tgz"
+  "version" "3.0.0"
 
 "ssri@^6.0.1":
   "integrity" "sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q=="
@@ -11079,13 +11079,13 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
-"swiper@^5.2.0":
-  "integrity" "sha512-7QjA0XpdOmiMoClfaZ2lYN6ICHcMm72LXiY+NF4fQLFidigameaofvpjEEiTQuw3xm5eksG5hzkaRsjQX57vtA=="
-  "resolved" "https://registry.npmjs.org/swiper/-/swiper-5.4.5.tgz"
-  "version" "5.4.5"
+"swiper@^5.2.0", "swiper@^6.8.4":
+  "integrity" "sha512-O+buF9Q+sMA0H7luMS8R59hCaJKlpo8PXhQ6ZYu6Rn2v9OsFd4d1jmrv14QvxtQpKAvL/ZiovEeANI/uDGet7g=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-6.8.4.tgz"
+  "version" "6.8.4"
   dependencies:
-    "dom7" "^2.1.5"
-    "ssr-window" "^2.0.0"
+    "dom7" "^3.0.0"
+    "ssr-window" "^3.0.0"
 
 "table@^6.0.9":
   "integrity" "sha512-UFZK67uvyNivLeQbVtkiUs8Uuuxv24aSL4/Vil2PJVtMgU8Lx0CYkP12uCGa3kjyQzOSgV1+z9Wkb82fCGsO0g=="
