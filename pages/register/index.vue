@@ -38,7 +38,6 @@
 import "./style.scss";
 export default {
   layout: "auth",
-  middleware:"admin",
   data() {
     return {
       infoUser: {

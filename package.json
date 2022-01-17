@@ -11,12 +11,10 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@heroku/buildpack-registry": "^1.0.1",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/toast": "^3.3.1",
     "core-js": "^3.15.1",
-    "heroku": "^7.59.2",
     "jalali-moment": "^3.3.10",
     "nuxt": "^2.15.7",
     "swiper": "^6.8.4",

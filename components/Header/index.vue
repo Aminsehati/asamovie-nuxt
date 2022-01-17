@@ -68,7 +68,7 @@
         <!--user profile-->
         <!-- auth area -->
         <div class="auth-area" v-if="!userInfo.isLogin">
-          <nuxt-link to="/register"> ورود / ثبت نام </nuxt-link>
+          <nuxt-link to="/login"> ورود / ثبت نام </nuxt-link>
         </div>
         <!-- auth area -->
       </div>

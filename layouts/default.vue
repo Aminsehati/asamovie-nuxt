@@ -21,10 +21,12 @@ export default {
     },
     async getUserInfo() {
       try {
-        const httpReponse = await this.$account.getAccountUser();
-        if (httpReponse?.isSuccess) {
-          const { phone } = httpReponse.data;
-          this.phoneNumber = phone ;
+        if (this.userInfo.isLogin) {
+          const httpReponse = await this.$account.getAccountUser();
+          if (httpReponse?.isSuccess) {
+            const { phone } = httpReponse.data;
+            this.phoneNumber = phone;
+          }
         }
       } catch (error) {}
     },
@@ -34,9 +36,10 @@ export default {
       userInfo: "user/getUser",
     }),
   },
-  mounted() {
-    this.setToken();
-    this.getUserInfo();
+  async mounted() {
+    await this.setToken();
+    this.getUserInfo()
+
   },
 };
 </script>
