@@ -1,0 +1,13 @@
+.wish__list {
+  min-height: calc(100vh - 80px);
+  padding-top: 30px;
+  .wish-list-wrapper {
+    display: flex;
+    .wish-list-item {
+      flex: 0 0 12.4%;
+      padding-right: 7px;
+      padding-left: 7px;
+      padding-bottom: 2rem;
+    }
+  }
+}

@@ -4,7 +4,7 @@ if (localStorage.token ) {
   axios.defaults.headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "*",
-    "authorization": `Bearer ${localStorage.token}`
+    "Authorization": `bearer ${localStorage.token}`
   }
 }
 let _this;

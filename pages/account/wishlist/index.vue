@@ -1,35 +1,56 @@
 <template>
   <div class="wish__list">
     <div class="container-fluid">
-      <div class="wish-wrapper">
-        <div class="box-wish-list">
-          <div class="title">
-            <h2>
-              پنل کاربری - لیست پخش
-            </h2>
-          </div>
-          <div class="body">
-            <div class="wishList" v-if="wishList.length > 0 ">
-            </div>
-              <div v-else class="is-empty">
-                  <p>
-                    سبد خرید شما خالی است
-                  </p>
-              </div>
-          </div>
+      <div class="wish-list-wrapper">
+        <div v-for="item in bookMarkList" :key="item.id" class="wish-list-item">
+          <Movie :movieInfo="item" />
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import "./style.css";
+import "./style.scss";
 export default {
-  middleware: ["auth"],
-  data(){
-    return {
-      wishList:[]
+  middleware({ redirect }) {
+    if (process.client) {
+      const token = localStorage["token"] || "";
+      if (!token) {
+        return redirect("/");
+      }
     }
-  }
+  },
+  data() {
+    return {
+      bookMarkList: [],
+      filters: {
+        loading: false,
+      },
+    };
+  },
+  mounted() {
+    this.getbookMarkItems();
+  },
+  methods: {
+    async getbookMarkItems() {
+      this.filters.loading = true;
+      try {
+        const httpResponse = await this.$bookmark.getBookMarkItems();
+        if (httpResponse?.isSuccess) {
+          this.bookMarkList = httpResponse.bookMarkItems.bookMark.map(
+            (item) => {
+              return {
+                ...item,
+                image: item?.imgUrl,
+                id: item?._id,
+              };
+            }
+          );
+          console.log(this.bookMarkList);
+          this.filters.loading = false;
+        }
+      } catch (error) {}
+    },
+  },
 };
 </script>

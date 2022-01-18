@@ -83,6 +83,10 @@ export default {
     {
       ssr: false,
       src: "@/services/account",
+    },
+    {
+      ssr: false,
+      src: "@/services/bookMark",
     }
 
   ],

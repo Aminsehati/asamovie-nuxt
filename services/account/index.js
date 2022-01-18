@@ -8,10 +8,16 @@ export default (context, inject) => {
 };
 class App {
   getAccountUser(Data) {
+    const token = localStorage.token || "";
     return _this.$call({
       url: api.userInfo.url,
       method: api.userInfo.method,
       data: Data,
+      options: {
+        headers: {
+          Authorization: `bearer ${token}`
+        }
+      }
     });
   }
 }

@@ -1,0 +1,14 @@
+{
+    "getBookMarkItems":{
+        "url":"/account/users/bookmark",
+        "method":"get"
+    },
+    "getBookMarkItem":{
+        "url":"/account/users/bookmark/",
+        "method":"get"
+    },
+    "addBookMark":{
+        "url":"/account/users/bookmark/",
+        "method":"post"
+    }
+}

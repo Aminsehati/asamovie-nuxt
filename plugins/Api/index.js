@@ -62,9 +62,8 @@ const call = (arg) => {
           }
 
           if (err?.response?.status == 401) {
-            localStorage.removeItem('auth.loggedIn');
-            localStorage.removeItem('token');
-            window.location.href = window.location.origin + '/';
+            // localStorage.clear();
+            // window.location.href = window.location.origin + '/';
           }
           else if (err?.response?.status != 200) {
             if (err?.response?.data?.message) {

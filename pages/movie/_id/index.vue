@@ -92,8 +92,15 @@
             <div class="action_movie flex items-center">
               <Button secondary large> تماشای آنلاین </Button>
               <div class="flex">
-                <span class="item-box mr-10">
+                <span
+                  class="item-box mr-10"
+                  v-if="!hasBookMark"
+                  @click="addToBookMark"
+                >
                   <i class="fas fa-plus text-18"></i>
+                </span>
+                <span class="item-box mr-10" v-else-if="hasBookMark">
+                  <i class="fas fa-check text-18"></i>
                 </span>
                 <span class="item-box mr-10">
                   <i class="fas fa-thumbs-up text-18"></i>
@@ -112,11 +119,7 @@
           </div>
           <div class="actors__movie mt-50">
             <h5 class="mb-20">عوامل :</h5>
-            <swiper
-              class="swiper"
-              :options="swiperOption"
-              ref="mySwiperRef"
-            >
+            <swiper class="swiper" :options="swiperOption" ref="mySwiperRef">
               <swiper-slide
                 v-for="actor in singleMovieInfo.actors"
                 :key="actor.id"
@@ -204,12 +207,13 @@ export default {
           },
         },
       },
-      loading: require("@/assets/img/loading.svg"),
+      hasBookMark: false,
     };
   },
   mounted() {
     this.getMovieItem();
     this.getListComments();
+    this.bookMarkMovie();
   },
   computed: {
     stylesCoverImage() {
@@ -261,6 +265,24 @@ export default {
           body: value,
         };
         const httpResponse = await this.$comment.addCommnet(params);
+      } catch (error) {}
+    },
+    async bookMarkMovie() {
+      try {
+        const { id } = this.$route.params;
+        const httpResponse = await this.$bookmark.getBookMarkItem(id);
+        if (httpResponse.isSuccess) {
+          this.hasBookMark = httpResponse.hashBookMark;
+        }
+      } catch (error) {}
+    },
+    async addToBookMark() {
+      try {
+        const { id } = this.$route.params;
+        const httpResponse = await this.$bookmark.addBookMark(id);
+        if (httpResponse.isSuccess) {
+          this.hasBookMark = true;
+        }
       } catch (error) {}
     },
   },

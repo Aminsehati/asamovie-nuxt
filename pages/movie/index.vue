@@ -10,7 +10,7 @@
     </div>
     <div class="container-fluid">
       <div v-if="loading">
-          <Spinner/>
+        <Spinner />
       </div>
       <div class="container__movie" v-else>
         <Movie
@@ -37,12 +37,12 @@ export default {
         age: this.$route.query.age || "All-ages",
         isHD: this.$route.query.isHD || false,
       },
-      loading:false,
+      loading: false,
       categoryItems: [],
       countryItems: [],
     };
   },
-  async fetch() {
+  mounted() {
     this.getCatgeoryItems();
     this.getCountryItems();
     this.getMovieItems();
@@ -79,7 +79,7 @@ export default {
       } catch (error) {}
     },
     async getMovieItems() {
-      this.loading = true ;
+      this.loading = true;
       try {
         const httpReponse = await this.$Movie.getMovieItems();
         this.movieItem = httpReponse.data.movie.map((item) => {
@@ -93,7 +93,7 @@ export default {
             category: item?.category,
           };
         });
-        this.loading = false ;
+        this.loading = false;
       } catch (error) {}
     },
   },
