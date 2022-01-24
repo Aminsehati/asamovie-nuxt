@@ -1,6 +1,6 @@
 .wish__list {
   min-height: calc(100vh - 80px);
-  padding-top: 30px;
+  padding-top: 15px;
   .wish-list-wrapper {
     display: flex;
     .wish-list-item {
@@ -9,5 +9,20 @@
       padding-left: 7px;
       padding-bottom: 2rem;
     }
+  }
+}
+.wish-list-loading{
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.empty-bookMark{
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .empty-bookMark-content{
+      margin-top: 50px;
   }
 }

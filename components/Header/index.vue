@@ -28,15 +28,13 @@
         </div>
         <!--wishlist area-->
         <!--user profile-->
-        <div class="user-profile" v-if="userInfo.isLogin">
+        <div class="user-profile" v-if="userInfo.isLogin" ref="selectBox">
           <span class="profile-button" @click="showDropdown = !showDropdown">
             <img :src="icons.profile" />
           </span>
           <div class="dropdown-content" v-if="showDropdown">
             <div class="phone-number">
-              {{
-                phoneNumber
-              }}
+              {{ phoneNumber }}
             </div>
             <ul class="list-menu">
               <li @click="showDropdown = !showDropdown">
@@ -54,7 +52,7 @@
                   سوالات متداول
                 </nuxt-link>
               </li>
-              <li>
+              <li class="cursor-pointer">
                 <span class="font-12 font-500" @click="logout">
                   خروج از حساب کاربری
                 </span>
@@ -79,11 +77,11 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-  props:{
-    phoneNumber:{
-      type:String,
-      default:""
-    }
+  props: {
+    phoneNumber: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
@@ -120,12 +118,25 @@ export default {
       userInfo: "user/getUser",
     }),
   },
-  methods:{
-    logout(){
-      // localStorage.removeItem("token");
-      // this.$router.push("/")
-    }
-  }
+  mounted() {
+    document && document.addEventListener("click", this.hideSelectBox);
+  },
+  destroyed() {
+    document && document.removeEventListener("click", this.hideSelectBox);
+  },
+  methods: {
+    logout() {
+      this.$checkAuthenticate.logOut()
+    },
+    hideSelectBox(e) {
+      const selectBox = this.$refs.selectBox;
+      if (selectBox.contains(e.target)) {
+        ////
+      } else {
+        this.showDropdown = false;
+      }
+    },
+  },
 };
 </script>
 

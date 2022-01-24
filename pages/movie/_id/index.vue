@@ -99,7 +99,7 @@
                 >
                   <i class="fas fa-plus text-18"></i>
                 </span>
-                <span class="item-box mr-10" v-else-if="hasBookMark">
+                <span class="item-box mr-10" v-else-if="hasBookMark" @click="deleteBookMark">
                   <i class="fas fa-check text-18"></i>
                 </span>
                 <span class="item-box mr-10">
@@ -282,6 +282,15 @@ export default {
         const httpResponse = await this.$bookmark.addBookMark(id);
         if (httpResponse.isSuccess) {
           this.hasBookMark = true;
+        }
+      } catch (error) {}
+    },
+    async deleteBookMark() {
+      try {
+        const { id } = this.$route.params;
+        const httpResponse = await this.$bookmark.deleteBookMark(id) ;
+        if(httpResponse.isSuccess){
+          this.hasBookMark = false ;
         }
       } catch (error) {}
     },

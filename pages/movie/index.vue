@@ -9,7 +9,7 @@
       />
     </div>
     <div class="container-fluid">
-      <div v-if="loading">
+      <div v-if="loading" class="movie-loading">
         <Spinner />
       </div>
       <div class="container__movie" v-else>

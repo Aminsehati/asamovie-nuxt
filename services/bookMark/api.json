@@ -10,5 +10,9 @@
     "addBookMark":{
         "url":"/account/users/bookmark/",
         "method":"post"
+    },
+    "deleteBookMark":{
+        "url":"/account/users/bookmark/",
+        "method":"delete"
     }
 }

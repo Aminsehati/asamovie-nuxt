@@ -32,3 +32,9 @@
 .movie_page{
     min-height: 70vh;
 }
+.movie-loading{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

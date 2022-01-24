@@ -53,6 +53,7 @@ const mixins = {
     return {
       imageUrl: "https://api-asamovie.vercel.app/uploads/image/",
       avatarIcon: require("~/assets/img/actors/profile.png"),
+      emptyBookMark : require("~/assets/img/bookMark/empty-bookMark.svg"),
       icons: {
         imdb: require('~/assets/icons/imdb.png'),
         like:require('~/assets/icons/like.svg'),
