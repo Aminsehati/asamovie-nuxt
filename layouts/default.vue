@@ -24,8 +24,8 @@ export default {
         if (this.userInfo.isLogin) {
           const httpReponse = await this.$account.getAccountUser();
           if (httpReponse?.isSuccess) {
-            const { phone } = httpReponse.data;
-            this.phoneNumber = phone;
+            this.$store.commit("user/setUserInfo", httpReponse.data);
+            this.phoneNumber = httpReponse.data.phone;
           }
         }
       } catch (error) {}
@@ -38,8 +38,7 @@ export default {
   },
   async mounted() {
     await this.setToken();
-    this.getUserInfo()
-
+    this.getUserInfo();
   },
 };
 </script>

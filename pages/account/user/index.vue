@@ -7,6 +7,9 @@
             پنل کاربری - ویرایش اطلاعات کاربری
           </span>
         </div>
+        {{
+          userInfo
+        }}
         <div class="body">
           <Spinner v-if="userInfo.loading" />
           <div v-else>
@@ -62,6 +65,7 @@
 
 <script>
 import "./style.scss";
+import { mapGetters } from 'vuex';
 export default {
   middleware({ redirect }) {
     if (process.client) {
@@ -82,6 +86,11 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapGetters({
+      userInfo: "user/getUser",
+    }),
+  },
   methods: {
     async updateUserInfo() {
       try {
@@ -94,6 +103,7 @@ export default {
         });
       } catch (error) {}
     },
+    
   },
 };
 </script>
