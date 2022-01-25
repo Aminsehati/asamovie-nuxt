@@ -11,7 +11,7 @@
                 <h6>
                     برای دیدن هزار فیلم و سریال به صفحه اصلی بروید
                 </h6>
-                <Button secondary>
+                <Button secondary @onClick="$router.push('/')">
                     صفحه اصلی آسامووی
                 </Button>
             </div>
